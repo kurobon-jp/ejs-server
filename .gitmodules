@@ -1,0 +1,3 @@
+[submodule "vendor/ejs"]
+	path = vendor/ejs
+	url = https://github.com/yt-dlp/ejs.git
