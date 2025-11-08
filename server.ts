@@ -19,7 +19,11 @@ Deno.serve(async (req) => {
         //     await kv.set(pv, player, 3600);
         // }
 
-        const res = await fetch(`https://www.youtube.com/s/player/${pv}/player_ias.vflset/en_US/base.js`);
+        const playerUrl = `https://www.youtube.com/s/player/${pv}/player_ias.vflset/en_US/base.js`;
+        const res = await fetch(playerUrl);
+        if (res.status != 200) {
+            return new Response(`${playerUrl}\n${res.status}:${res.statusText}`, { status: res.status });
+        }
         player = await res.text();
     } catch (error) {
         return new Response(`${error}`, { status: 500 });
