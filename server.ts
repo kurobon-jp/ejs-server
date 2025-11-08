@@ -1,5 +1,5 @@
 import { decrypt } from "./src/decrypt.ts";
-import { createKV } from "./src/kv.ts";
+// import { createKV } from "./src/kv.ts";
 import { getMinifyPlayer } from "./src/minifyPlayer.ts";
 
 Deno.serve(async (req) => {
@@ -11,13 +11,16 @@ Deno.serve(async (req) => {
 
     let player = "";
     try {
-        const kv = await createKV();
-        player = await kv.get(pv);
-        if (!player) {
-            const res = await fetch(`https://www.youtube.com/s/player/${pv}/player_ias.vflset/en_US/base.js`);
-            player = await res.text();
-            await kv.set(pv, player, 3600);
-        }
+        // const kv = await createKV();
+        // player = await kv.get(pv);
+        // if (!player) {
+        //     const res = await fetch(`https://www.youtube.com/s/player/${pv}/player_ias.vflset/en_US/base.js`);
+        //     player = await res.text();
+        //     await kv.set(pv, player, 3600);
+        // }
+
+        const res = await fetch(`https://www.youtube.com/s/player/${pv}/player_ias.vflset/en_US/base.js`);
+        player = await res.text();
     } catch (error) {
         return new Response(`${error}`, { status: 500 });
     }
