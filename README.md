@@ -1,4 +1,4 @@
-# ejs-server
+# yt-dlp-ejs-server
 
 A lightweight private API server for resolving YouTube cipher signatures (`n` and `sig`)  
 using the [yt-dlp/ejs](https://github.com/yt-dlp/ejs) solver logic.
@@ -21,7 +21,7 @@ it should not be exposed as a public API.
 ## 🧩 Project Structure
 
 ```
-ejs-server/
+yt-dlp-ejs-server/
 ├── server.ts          # Entry point
 ├── vendor/
 │   └── ejs/           # Embedded yt-dlp/ejs source
@@ -175,7 +175,7 @@ Keep this project:
 
 ## 🧾 License
 
-- **ejs-server** — MIT License  
+- **yt-dlp-ejs-server** — MIT License  
 - **yt-dlp/ejs** — Unlicense
 
 ---
